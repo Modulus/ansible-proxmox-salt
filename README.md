@@ -1,4 +1,4 @@
-# Ansible setup to create a kvm server
+# Ansible playbook setup promox
 This ansible collection of playbooks will help you setup a salt master. This requires you have a Proxmox server up and running.
 
 ## Proxmox
