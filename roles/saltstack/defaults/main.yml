@@ -4,3 +4,7 @@ packages:
   - salt-api
   - salt-cloud
 ubuntu_version: 16.04
+cloud_providers_folder: /etc/salt/cloud.providers.d
+cloud_profiles_folder: /etc/salt/cloud.profiles.d
+cloud_proxmox_file: proxmox.conf
+salt_master_config_folder: /etc/salt/master.d

@@ -1,0 +1,6 @@
+---
+  - name: Ensure proxmox.conf is present in /etc/salt/cloud.providers.d/
+    template: dest="{{cloud_providers_folder}}/{{cloud_proxmox_file}}" src="proxmox.provider.conf.j2"
+
+  - name: Ensure proxmox.conf is present in /etc/salt/cloud.profiles.d/
+    template: dest="{{cloud_profiles_folder}}/{{cloud_proxmox_file}}" src="proxmox.profiles.conf.j2"

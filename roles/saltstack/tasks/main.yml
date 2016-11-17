@@ -16,7 +16,7 @@
 
 
   - name: Setup minion
-    template: src="minion.j2" dest="/etc/salt/minion" owner="root" mode="644"
+    template: src="minion.conf.j2" dest="/etc/salt/minion" owner="root" mode="644"
 
   - name: restart salt-minion service
     service:
@@ -26,3 +26,7 @@
 
   - name: Debug restart
     debug: msg="{{restart_facts}}"
+
+  - include: cloud.yml
+  - include: config.yml
+  - include: packages.yml

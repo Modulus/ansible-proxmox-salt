@@ -1,0 +1,14 @@
+proxmox-ubuntu-16.04:
+  provider: proxmox-provider
+  image: local:iso/ubuntu-16.04.1-server-amd64.iso
+  techonology: openvz
+  host: {{node}}
+  ip_address: {{proxmox_host}}
+  password: top secret
+  ssh_username: root
+  disk: 15
+  memory: 512
+  cpus: 1
+  memory: 256
+  desc: minion1
+  clone: False

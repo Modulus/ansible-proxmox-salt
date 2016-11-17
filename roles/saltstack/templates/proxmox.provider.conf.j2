@@ -1,0 +1,9 @@
+proxmox-provider:
+  minion:
+    master: {{salt_master_ip}}
+  user: {{api_user}}
+  password: {{api_password}}
+  url: {{proxmox_host}}
+  driver: proxmox
+  verify_ssl: False
+  # https://github.com/saltstack/salt/issues/25652

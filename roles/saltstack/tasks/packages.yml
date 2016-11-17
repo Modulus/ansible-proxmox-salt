@@ -1,0 +1,9 @@
+---
+  - name: Ensure python-pip is installed
+    apt: name=python-pip state=present
+
+  - name: Ensure IPy is pip installed
+    pip: name=ipy state=present
+
+  - name: Ensure requests is pip installed
+    pip: name=requests state=present

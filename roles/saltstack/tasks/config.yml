@@ -1,0 +1,8 @@
+---
+  - name: Ensure master.conf is present in /etc/salt/master.d/
+    template: dest="{{salt_master_config_folder}}/master.conf" src="master.conf.j2"
+    register: master_conf
+
+  - name: Restart salt-master service
+    service: name=salt-master state=restarted
+    when: master_conf.changed
