@@ -1,0 +1,10 @@
+---
+  - name: Check if ssh key exists
+    stat: path="{{key_folder}}/{{key_name}}"
+    register: stat_fact
+  - name: Debug stat
+    debug: msg="{{stat_fact}}"
+
+  - name: Ensure ssh key is generated
+    shell: ssh-keygen -b 4096 -t rsa -f "{{key_folder}}/{{key_name}}" -q -N ""
+    when: stat_fact.stat.exists == false

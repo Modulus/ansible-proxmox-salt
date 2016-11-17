@@ -1,0 +1,7 @@
+---
+  - name: Setup server for kvm
+    hosts: master
+    gather_facts: True
+    become: yes
+    roles:
+      - saltstack

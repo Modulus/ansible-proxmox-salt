@@ -1,0 +1,6 @@
+---
+  - name: Setup server for kvm
+    hosts: server
+    gather_facts: True
+    roles:
+      - images

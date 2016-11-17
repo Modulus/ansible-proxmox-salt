@@ -1,0 +1,8 @@
+#Vagrant stuffs
+.vagrant
+*.log
+#Jetbrains stuffs
+.idea
+
+#Ansible stuffs
+*.retry

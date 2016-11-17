@@ -1,0 +1,32 @@
+---
+  # http://docs.ansible.com/ansible/pip_module.html
+  - name: install python-pip
+    apt: name=python-pip state=present
+
+  - name: install virtualenv
+    apt: name=virtualenv state=present
+
+  - name: install proxmoxer
+    pip: name=proxmoxer state=present
+
+  - name: install requests
+    pip: name=requests state=present
+
+  # requires proxmoxer pip module
+  # more on that here: http://docs.ansible.com/ansible/proxmox_module.html
+  - name: "Create proxmox node"
+    proxmox:
+      api_host: "{{proxmox_host}}"
+      api_user: "{{api_user}}"
+      api_password: "{{api_password}}"
+      disk: 20
+      node: "{{node}}"
+      ostemplate: 'local:iso/ubuntu-16.04.1-server-amd64.iso'
+      hostname: master2
+      memory: 512
+      state: present
+      vmid: 100
+      password: "{{password}}"
+      storage: local-lvm
+      timeout: 30000
+      #netif: '{"eth0":"name=eth0,gw=192.168.1.1,ip=192.168.1.1/24,bridge=vmbr0"}'

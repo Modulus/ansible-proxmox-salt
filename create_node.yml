@@ -1,0 +1,8 @@
+---
+  - name: Create proxmox node
+    hosts: server
+    gather_facts: yes
+    tasks:
+      - debug: msg="Creating new node"
+    roles:
+      - proxmox

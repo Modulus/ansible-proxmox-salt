@@ -1,0 +1,9 @@
+---
+  - name: Print velcome message
+    hosts: controller
+    gather_facts: yes
+    connection: local
+    tasks:
+      - debug: msg="Welcome master, I am ready to accept your commands!"
+    roles:
+      - controller  

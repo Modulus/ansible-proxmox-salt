@@ -1,0 +1,6 @@
+packages:
+  - salt-master
+  - salt-minion
+  - salt-api
+  - salt-cloud
+ubuntu_version: 16.04
