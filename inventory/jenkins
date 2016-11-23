@@ -1,0 +1,6 @@
+[jenkins]
+192.168.1.23 ansible_connection=ssh ansible_ssh_user=ansible
+
+[jenkins:vars]
+minion_id=jenkins
+roles=[minion,jenkins]

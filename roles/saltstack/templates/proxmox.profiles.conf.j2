@@ -1,14 +1,41 @@
-proxmox-ubuntu-16.04:
+proxmox-ubuntu-16.04_micro:
   provider: proxmox-provider
   image: local:iso/ubuntu-16.04.1-server-amd64.iso
-  techonology: openvz
+  technology: qemu
   host: {{node}}
-  ip_address: {{proxmox_host}}
   password: top secret
-  ssh_username: root
-  disk: 15
+  #ssh_username: root
   memory: 512
-  cpus: 1
-  memory: 256
-  desc: minion1
+  swap: 256
+  cores: 1
   clone: False
+  ostype: other
+  kvm: true
+  #onboot: 1
+  disk: 15
+  #storage: local-lvm
+  #bootdisk: ide0
+  sata0:  local:15,format=raw,size:15GB
+  net0: e1000,bridge=vmbr0
+  ide2: local:iso/ubuntu-16.04.1-server-amd64.iso,media=cdrom
+
+
+proxmox-ubuntu-16.04_small:
+  extends: proxmox-ubuntu-16.04_micro
+  memory: 512
+
+proxmox-ubuntu-16.04_medium:
+  extends: proxmox-ubuntu-16.04_micro
+  cores: 2
+  memory: 512
+
+proxmox-ubuntu-clone:
+  provider: proxmox-provider
+  image: local:iso/ubuntu-16.04.1-server-amd64.iso
+  clone: 1
+  clone_format: raw
+  clone_full: 1
+  technology: qemu
+  host: {{node}}
+  password: top secret
+  clone_from: 102

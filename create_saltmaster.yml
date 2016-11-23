@@ -3,5 +3,6 @@
     hosts: master
     gather_facts: True
     become: yes
+    become_user: ansible
     roles:
       - saltstack

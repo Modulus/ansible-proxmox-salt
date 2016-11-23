@@ -1,18 +1,16 @@
 ---
-
   - name: Ensure gpg key is in place
     apt_key:
-      url: "https://repo.saltstack.com/apt/ubuntu/{{ansible_distribution_release}}/amd64/latest/SALTSTACK-GPG-KEY.pub"
+      url: "https://repo.saltstack.com/apt/ubuntu/{{ansible_distribution_version}}/amd64/latest/SALTSTACK-GPG-KEY.pub"
       state: present
 
   - name: Ensure saltstack repo for ubuntu is in place
     template: src="saltstack.list.j2" dest="/etc/apt/sources.list.d/saltstack.list" owner="root" mode="0644"
 
-  - name: Install saltstack packages
+  - name: Install salt-minion package
     apt:
-      name: "{{item}}"
+      name: salt-minion
       update_cache: yes
-    with_items: "{{packages}}"
 
 
   - name: Setup minion
@@ -26,7 +24,3 @@
 
   - name: Debug restart
     debug: msg="{{restart_facts}}"
-
-  - include: cloud.yml
-  - include: config.yml
-  - include: packages.yml

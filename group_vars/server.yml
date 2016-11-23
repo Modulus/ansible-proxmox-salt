@@ -1,6 +1,6 @@
-user: ansible
-proxmox_host: xxx.xx.xx.xx
-api_user: xxx@xxx
-api_password: non of your beeswax
-node: loke1
-password: non of your beeswax
+user: dasfasdf
+proxmox_host: xx.xx.xx.xx
+api_user: root@pam
+api_password: asdfdsaf
+node: asdfafsd
+password: jadda

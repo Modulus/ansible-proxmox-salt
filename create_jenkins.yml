@@ -1,0 +1,7 @@
+---
+  - name: Initialize minions machines
+    hosts: jenkins
+    gather_facts: yes
+    become: true
+    roles:
+      - salt_minion

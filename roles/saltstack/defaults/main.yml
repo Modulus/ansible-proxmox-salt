@@ -3,7 +3,6 @@ packages:
   - salt-minion
   - salt-api
   - salt-cloud
-ubuntu_version: 16.04
 cloud_providers_folder: /etc/salt/cloud.providers.d
 cloud_profiles_folder: /etc/salt/cloud.profiles.d
 cloud_proxmox_file: proxmox.conf
