@@ -1,0 +1,18 @@
+---
+  - name: Ensure gpg key is in place
+    apt_key:
+      url: "https://repo.saltstack.com/apt/ubuntu/{{ansible_distribution_version}}/amd64/latest/SALTSTACK-GPG-KEY.pub"
+      state: present
+    when: ansible_distribution == "Ubuntu"
+
+
+  - name: Ensure saltstack repo for ubuntu is in place
+    template: src="saltstack.ubuntu.list.j2" dest="/etc/apt/sources.list.d/saltstack.list" owner="root" mode="0644"
+    when: ansible_distribution == "Ubuntu"
+
+
+  - name: Install salt-minion package
+    apt:
+      name: salt-minion
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"

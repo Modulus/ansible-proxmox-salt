@@ -1,6 +1,7 @@
-user: dasfasdf
-proxmox_host: xx.xx.xx.xx
-api_user: root@pam
-api_password: asdfdsaf
-node: asdfafsd
-password: jadda
+#server
+user: dsfaadfsadsf
+proxmox_host: 12.12268.1.12
+api_user: xx@xx
+api_password: xx xx
+node: xxx
+password: xx xx

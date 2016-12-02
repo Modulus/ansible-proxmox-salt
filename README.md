@@ -9,6 +9,7 @@ Download [proxmox iso](https://www.proxmox.com/en/downloads?task=callelement&for
 1. See in inventory/server in this code base before starting anything. This needs the ip address and username to the server before it can provision the kvm-server.
 2. Log onto your system and add a ansible user, this user should also be in the sudo group
 *.. sudo useradd -G sudo -m ansible
+*.. on centos usermod -aG wheel ansible
 *.. This user also need the controllers /home/vagrant/.ssh/id_rsa.pub key in the authorized_keys file under /home/ansible/.ssh/authorized_keys on the kvm server.
 
 ## How to start
