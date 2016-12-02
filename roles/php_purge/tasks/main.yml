@@ -1,0 +1,50 @@
+---
+  - name: Purge php Redhat Family
+    yum: name="{{item}}" state=absent
+    when: ansible_os_family == "RedHat"
+    with_items:
+      - httpd
+      - apr
+      - apr-util
+      - httpd-tools
+      - mailcap
+      - httpd-manual
+      - php
+      - php-mysql
+      - php-gd
+      - php-mbstring
+      - php-odbc
+      - php-pear
+      - php-xml
+      - php-xmlrpc
+      - mysql
+      - mysql-server
+      - mariadb
+      - mariadb-server
+      - mod_ssl
+      - clamav
+
+  - name: Purge php ubuntu
+    apt: name="{{item}}" state=absent
+    when: ansible_distribution == "Ubuntu"
+    with_items:
+      - apache2
+      - apr
+      - apr-util
+      - httpd-tools
+      - mailcap
+      - httpd-manual
+      - php
+      - php-mysql
+      - php-gd
+      - php-mbstring
+      - php-odbc
+      - php-pear
+      - php-xml
+      - php-xmlrpc
+      - mysql
+      - mysql-server
+      - mariadb
+      - mariadb-server
+      - mod_ssl
+      - clamav

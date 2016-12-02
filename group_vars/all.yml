@@ -1,7 +1,8 @@
+#all
 user: ansible
-proxmox_host: xx.xx.xx.xx
+proxmox_host: 192.168.1.39
 api_user: root@pam
-api_password: jaudaåå
-node: 12323
-password: asdfdsafads
-salt_master_ip: xxx.xx.xx.xx
+api_password: four seasons
+node: loke
+password: for seasons
+salt_master_ip: 192.168.1.27

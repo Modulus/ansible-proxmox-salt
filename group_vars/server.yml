@@ -1,6 +1,7 @@
-user: dasfasdf
-proxmox_host: xx.xx.xx.xx
+#server
+user: ansible
+proxmox_host: 192.168.1.39
 api_user: root@pam
-api_password: asdfdsaf
-node: asdfafsd
-password: jadda
+api_password: four seasons
+node: loke
+password: for seasons

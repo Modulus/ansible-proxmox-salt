@@ -1,0 +1,6 @@
+---
+  - name: Purge packages from udemy course
+    hosts: web2
+    become: yes
+    roles:
+      - php_purge

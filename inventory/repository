@@ -1,0 +1,6 @@
+[repository]
+192.168.1.18 ansible_connection=ssh ansible_ssh_user=ansible
+
+[repository:vars]
+minion_id=repository
+roles=["minion","repository","nexus","sonarqube","sonar","docker-registry","registry","git","gitlab"]
