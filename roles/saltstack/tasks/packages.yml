@@ -7,3 +7,6 @@
 
   - name: Ensure requests is pip installed
     pip: name=requests state=present
+
+  - name: Ensure Dulwich is present
+    apt: name=python-dulwich state=present    
