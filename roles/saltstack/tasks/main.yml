@@ -2,7 +2,7 @@
 
   - name: Ensure gpg key is in place
     apt_key:
-      url: "https://repo.saltstack.com/apt/ubuntu/{{ansible_distribution_release}}/amd64/latest/SALTSTACK-GPG-KEY.pub"
+      url: "https://repo.saltstack.com/apt/ubuntu/{{ansible_distribution_version}}/amd64/latest/SALTSTACK-GPG-KEY.pub"
       state: present
 
   - name: Ensure saltstack repo for ubuntu is in place

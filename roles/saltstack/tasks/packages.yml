@@ -8,5 +8,8 @@
   - name: Ensure requests is pip installed
     pip: name=requests state=present
 
-  - name: Ensure Dulwich is present
-    apt: name=python-dulwich state=present    
+  - name: Ensure Dulwich is absent
+    apt: name=python-dulwich state=absent
+
+  - name: Ensure pygit2 is present
+    apt: name=python-pygit2 state=present

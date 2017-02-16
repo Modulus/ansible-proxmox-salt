@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Script to add a public key to all
+declare -a nodes=("192.168.1.19" "192.168.1.20")
+for ip in "${nodes[@]}"
+do
+  cat /home/vagrant/.ssh/id_rsa.pub | ssh modulus@$ip 'cat >> /home/modulus/.ssh/authorized_keys'
+
+done
+echo "Done..."
+exit 0

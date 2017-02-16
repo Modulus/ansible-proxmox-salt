@@ -1,6 +1,6 @@
 ---
   - name: Initialize minions machines
-    hosts: jenkins, repository, web
+    hosts: minions
     gather_facts: yes
     become: true
     roles:

@@ -1,2 +1,0 @@
-[master]
-192.168.1.27 ansible_connection=ssh ansible_ssh_user=ansible

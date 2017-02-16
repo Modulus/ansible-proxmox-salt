@@ -1,0 +1,2 @@
+[master]
+192.168.1.19 ansible_connection=ssh ansible_ssh_user=modulus ansible_ssh_pass="four seasons"

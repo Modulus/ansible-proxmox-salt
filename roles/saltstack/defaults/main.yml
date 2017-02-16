@@ -3,6 +3,7 @@ packages:
   - salt-minion
   - salt-api
   - salt-cloud
+  - salt-ssh
 cloud_providers_folder: /etc/salt/cloud.providers.d
 cloud_profiles_folder: /etc/salt/cloud.profiles.d
 cloud_proxmox_file: proxmox.conf

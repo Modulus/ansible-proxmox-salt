@@ -6,4 +6,4 @@
 
 #Ansible stuffs
 *.retry
-group_vars/*.*
+#group_vars/*.*

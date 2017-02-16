@@ -1,8 +1,11 @@
 ---
-  - name: Setup server for kvm
+  #- include: ansible_required.yml
+
+  - name: Setup salt-master
     hosts: master
     gather_facts: True
     become: yes
-    become_user: ansible
+    become_user: root
+    become_method: sudo
     roles:
       - saltstack

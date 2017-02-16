@@ -1,0 +1,6 @@
+[jenkins]
+192.168.1.20 ansible_connection=ssh ansible_ssh_user=modulus minion_id=jenkins ansible_ssh_pass="four seasons"
+
+[jenkins:vars]
+
+roles=["minion","jenkins"]

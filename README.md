@@ -23,3 +23,7 @@ Download [proxmox iso](https://www.proxmox.com/en/downloads?task=callelement&for
 #salt-cloud
 1. sudo salt-cloud -F proxmox-provider list_nodes
 2. sudo salt-cloud -p proxmox-ubuntu-16.04_micro minion1  -l debug
+
+
+## Setup salt master
+1. ansible-playbook create_salt_master.yml --ask-sudo-pass
