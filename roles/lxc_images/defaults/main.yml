@@ -1,0 +1,44 @@
+# ==============================================================================
+# Here all the images, which are downloaded to the kvm server, are listed.
+# Ubuntu releases with hashes: http://releases.ubuntu.com/
+# Proxmox stores iso files in /var/lib/vz/template/iso
+# TODO: Make python script to generate this list from: http://download.proxmox.com/images/system/
+# TODO: Make python script to generate list from this as well: https://download.openvz.org/template/precreated/
+#===============================================================================
+#image_location: /var/lib/vz/template/iso
+lxc_image_location: /var/lib/vz/custom/template/cache
+timeout: 3000
+user: root
+lxc_images:
+  - { "url": "http://download.proxmox.com/images/system/alpine-3.3-default_20160427_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/alpine-3.4-default_20161206_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/alpine-3.5-default_20170504_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/archlinux-base_2015-24-29-1_x86_64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/archlinux-base_20161207-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/archlinux-base_20170703-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/archlinux-base_20170704-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/centos-6-default_20150829_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/centos-7-default_20161207_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/centos-7-default_20170504_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/debian-6.0-standard_6.0-7_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/debian-7.0-standard_7.0-3_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/debian-7.0-standard_7.11-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/debian-8.0-standard_8.0-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/debian-8.0-standard_8.4-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/debian-8.0-standard_8.6-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/debian-8.0-standard_8.7-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/debian-9.0-standard_9.0-2_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/fedora-19-default_19-20150618_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/fedora-24-default_20161207_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/fedora-25-default_20170316_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/gentoo-current-default_20161206_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/gentoo-current-default_20170503_amd64.tar.xz"}
+  - { "url": "http://download.proxmox.com/images/system/ubuntu-12.04-standard_12.04-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/ubuntu-14.04-standard_14.04-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/ubuntu-15.04-standard_15.04-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/ubuntu-15.10-standard_15.10-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/ubuntu-16.04-standard_16.04-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/ubuntu-16.10-standard_16.10-1_amd64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/ubuntu-17.04-standard_17.04-1_amd64.tar.gz"}
+  - { "url": "https://download.openvz.org/template/precreated/suse-13.2-x86_64.tar.gz"}
+  - { "url": "http://download.proxmox.com/images/system/opensuse-42.2-default_20170406_amd64.tar.xz"}

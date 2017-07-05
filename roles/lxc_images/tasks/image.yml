@@ -1,0 +1,17 @@
+---
+  # Print out the current image metadata
+  - name: Debug current image data
+    debug:
+      msg: "Downloading {{item}}\nPlease be patient this could take a while"
+
+  # Download current image,
+  #   item.url.split('/')[-1] will get the last part of the url, which is the
+  #   name of the image file.
+  #   When the destination contains the name, the file will not be downloaded
+  #     if it allready exists
+  - name: Download lxc image
+    get_url:
+      url: "{{item.url}}"
+      dest: "{{lxc_image_location}}/{{item.url.split('/')[-1]}}"
+      timeout: "{{timeout}}"
+      owner: "{{user}}"

@@ -1,0 +1,7 @@
+---
+  - include: image.yml
+    vars:
+      item: "{{image}}"
+    with_items: "{{lxc_images}}"
+    loop_control:
+      loop_var: image
