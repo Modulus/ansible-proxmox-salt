@@ -4,4 +4,3 @@
     gather_facts: True
     roles:
       - images
-      - lxc_images

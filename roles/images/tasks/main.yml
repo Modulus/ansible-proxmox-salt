@@ -1,5 +1,10 @@
 ---
-  - include: image.yml
+  - name: ensure image location  exits
+    file:
+      path: "{{image_location}}"
+      state: directory
+
+  - include_tasks: image.yml
     vars:
       item: "{{image}}"
     with_items: "{{images}}"

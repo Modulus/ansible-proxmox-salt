@@ -1,5 +1,10 @@
 ---
-  - include: image.yml
+  - name: ensure lcx image location exist
+    file:
+      path: "{{lxc_image_location}}"
+      state: directory
+
+  - include_tasks: image.yml
     vars:
       item: "{{image}}"
     with_items: "{{lxc_images}}"

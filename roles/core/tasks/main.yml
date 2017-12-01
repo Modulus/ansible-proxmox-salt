@@ -1,0 +1,37 @@
+---
+  - name: Set swappiness to preconfigured value
+    lineinfile:
+      path:  "/etc/sysctl.conf"
+      line: "vm.swappiness={{swappiness}}"
+      regexp: "^vm.swappiness=*"
+
+  - name: Disable swapp
+    command: swapoff -a
+
+  - name: Install supported docker version
+    package:
+      name: docker.io
+      state: present
+
+  - name: Install required package
+    package:
+      name: apt-transport-https
+      state: present
+
+  - name: Add pgp key
+    shell: "curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -"
+    runas: root
+
+  - name: Add apt list file
+    template:
+      src: templates/kubernetes.list.j2
+      dest: "{{kubernetes_source_list_file}}"
+
+  - name: update apt cache
+    apt:
+      update_cache: yes
+  - name: install required kubenetes packages
+    package:
+      name: "{{item}}"
+      state: present
+    with_items: ["kubelet", "kubeadm", "kubectl"]

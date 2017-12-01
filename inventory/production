@@ -40,3 +40,15 @@ web2
 
 [web:vars]
 roles=["minion","web","nexus","sonarqube","sonar","docker-registry","registry","git","gitlab"]
+
+[kubes]
+192.168.1.26
+192.168.1.31
+192.168.1.28
+192.168.1.29
+192.168.1.24 ansible_ssh_user=modulus
+
+[kubes:vars]
+ansible_connection=ssh
+ansible_ssh_user=modulus
+ansible_ssh_pass=four seasons

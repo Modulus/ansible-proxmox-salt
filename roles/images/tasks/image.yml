@@ -15,4 +15,4 @@
       checksum: "{{item.alg}}:{{item.hash}}"
       dest: "{{image_location}}/{{item.url.split('/')[-1]}}"
       timeout: "{{timeout}}"
-      owner: "{{user}}"
+      owner: "{{image_user}}"

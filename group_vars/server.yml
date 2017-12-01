@@ -1,7 +1,0 @@
-#server
-user: root
-proxmox_host: 192.168.1.39
-api_user: root@pam
-api_password: four seasons
-node: loke
-password: for seasons

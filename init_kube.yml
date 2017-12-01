@@ -1,0 +1,15 @@
+---
+  - name: Install python2
+    hosts: kubes
+    gather_facts: False
+    become: yes
+    tasks:
+      - name: install python 2
+        raw: sudo apt install -y python
+
+  - name: Setup server for kvm
+    hosts: kubes
+    gather_facts: True
+    become: yes
+    roles:
+      - core
