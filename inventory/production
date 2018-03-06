@@ -47,6 +47,19 @@ roles=["minion","web","nexus","sonarqube","sonar","docker-registry","registry","
 192.168.1.28
 192.168.1.29
 192.168.1.24 ansible_ssh_user=modulus
+192.168.1.17
+192.168.1.18
+192.168.1.21
+192.168.1.23
+192.168.1.24
+
+[kube_masters]
+192.168.1.16
+
+[kube_masters:vars]
+ansible_connection=ssh
+ansible_ssh_user=modulus
+ansible_ssh_pass=four seasons
 
 [kubes:vars]
 ansible_connection=ssh

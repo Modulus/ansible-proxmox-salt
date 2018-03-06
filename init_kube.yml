@@ -1,14 +1,14 @@
 ---
   - name: Install python2
-    hosts: kubes
+    hosts: kubes,kube_masters
     gather_facts: False
     become: yes
     tasks:
       - name: install python 2
         raw: sudo apt install -y python
 
-  - name: Setup server for kvm
-    hosts: kubes
+  - name: Setup server for k8s
+    hosts: kubes,kube_masters
     gather_facts: True
     become: yes
     roles:
