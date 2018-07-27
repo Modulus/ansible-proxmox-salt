@@ -2,66 +2,31 @@
 localhost ansible_connection=local
 
 [minions:children]
-jenkins
-jenkins_agent
-repository
+kubes
 
 [master]
-192.168.1.35 ansible_connection=ssh ansible_ssh_user=modulus ansible_ssh_pass="four seasons"
+192.168.1.31 ansible_connection=ssh ansible_ssh_user=modulus 
 
-[jenkins]
-192.168.1.20 ansible_connection=ssh ansible_ssh_user=modulus minion_id=jenkins ansible_ssh_pass="four seasons"
 
-[jenkins:vars]
-roles=["minion","jenkins"]
 
-[jenkins_agent]
-192.168.1.20 ansible_connection=ssh ansible_ssh_user=modulus minion_id=jenkins-agent1 ansible_ssh_pass="four seasons"
 
-[repository]
-192.168.1.17 ansible_connection=ssh ansible_ssh_user=modulus ansible_ssh_pass="four seasons"
 
-[repository:vars]
-minion_id=repository
-roles=["minion","repository","nexus","sonarqube","sonar","docker-registry","registry","git","gitlab"]
-
-[server]
-192.168.1.39 ansible_connection=ssh ansible_ssh_user=root
-
-[web1]
-192.168.1.30 ansible_connection=ssh ansible_ssh_user=ansible minion_id=web1
-
-[web2]
-192.168.1.24 ansible_connection=ssh ansible_ssh_user=ansible minion_id=web2
-
-[web:children]
-web1
-web2
-
-[web:vars]
-roles=["minion","web","nexus","sonarqube","sonar","docker-registry","registry","git","gitlab"]
 
 [kubes]
-192.168.1.26
-192.168.1.31
-192.168.1.28
-192.168.1.29
-192.168.1.24 ansible_ssh_user=modulus
-192.168.1.17
-192.168.1.18
-192.168.1.21
-192.168.1.23
-192.168.1.24
+192.168.1.32
+192.168.1.38
+192.168.1.40
+192.168.1.41
 
 [kube_masters]
-192.168.1.16
+192.168.1.31
 
 [kube_masters:vars]
 ansible_connection=ssh
 ansible_ssh_user=modulus
-ansible_ssh_pass=four seasons
+ansible_python_interpreter=/usr/bin/python3
 
 [kubes:vars]
 ansible_connection=ssh
 ansible_ssh_user=modulus
-ansible_ssh_pass=four seasons
+ansible_python_interpreter=/usr/bin/python3

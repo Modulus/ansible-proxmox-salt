@@ -1,8 +1,5 @@
-id: {{minion_id}}
 master: {{salt_master_ip}}
 hash_type: sha256
 grains:
   roles:
-    {% for role in roles %}
-    - {{role}}
-    {% endfor %}
+    - minion
