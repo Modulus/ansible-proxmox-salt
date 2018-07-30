@@ -1,11 +1,13 @@
 ---
-  - name: Install python2
+  - name: Purge python2
     hosts: kubes,kube_masters
     gather_facts: False
     become: yes
     tasks:
-      - name: install python 2
-        raw: sudo apt install -y python
+      - name: purge python 2
+        package:
+          name: python
+          state: absent
 
   - name: Setup server for k8s
     hosts: kubes,kube_masters

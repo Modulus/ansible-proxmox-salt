@@ -1,6 +1,9 @@
 # Ansible playbook setup promox
 This ansible collection of playbooks will help you setup a salt master. This requires you have a Proxmox server up and running.
 
+## To disable swap
+sudo salt "*" cmd.run "sudo sed -i '/ swap / s/^/#/' /etc/fstab"
+
 ## Proxmox
 More on proxmox here: [proxmox](https://www.proxmox.com/en/)
 Download [proxmox iso](https://www.proxmox.com/en/downloads?task=callelement&format=raw&item_id=211&element=f85c494b-2b32-4109-b8c1-083cca2b7db6&method=download&args[0]=21c9042132e3376765ceafca50271007)
@@ -27,3 +30,13 @@ Download [proxmox iso](https://www.proxmox.com/en/downloads?task=callelement&for
 
 ## Setup salt master
 1. ansible-playbook create_salt_master.yml --ask-sudo-pass
+
+### TODO:
+
+apt install nfs-common
+start rcpbind service
+nfs-common service restart
+restart kubelet service
+https://github.com/rancher/rancher/issues/4423
+https://github.com/kubernetes/examples/tree/master/staging/volumes/nfs/nfs-data
+https://docs.openshift.org/latest/install_config/persistent_storage/persistent_storage_nfs.html
