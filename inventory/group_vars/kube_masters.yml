@@ -1,2 +1,2 @@
-swappiness: 10
+swappiness: 1
 kubernetes_source_list_file: "/etc/apt/sources.list.d/kubernetes.list"
