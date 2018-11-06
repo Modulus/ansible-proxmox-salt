@@ -6,4 +6,4 @@ api_password: four seasons
 node: loke
 password: for seasons
 salt_master_ip: 192.168.1.31
-swappiness: 10
+swappiness: 1
