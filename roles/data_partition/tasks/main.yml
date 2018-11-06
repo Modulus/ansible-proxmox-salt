@@ -1,0 +1,23 @@
+---
+- name: Create partition
+  parted:
+    device: "{{data_disk_device_path}}"
+    number: 1
+    state: present
+
+- name: Create filesystem on new partition 
+  filesystem:
+     fstype: ext3
+     dev: "{{data_disk_parition}}"
+
+- name: Create data folder
+  file:
+    path: /data
+    state: directory
+
+- name: Mount the new parition in the /data folder
+  mount:
+    fstype: ext3
+    src: "{{data_disk_parition}}"
+    path: /data
+    state: mounted

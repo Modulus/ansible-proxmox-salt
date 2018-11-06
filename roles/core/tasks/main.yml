@@ -34,4 +34,4 @@
     package:
       name: "{{item}}"
       state: present
-    with_items: ["kubelet", "kubeadm", "kubectl"]
+    with_items: ["kubelet", "kubeadm", "kubectl", "nfs-common"]

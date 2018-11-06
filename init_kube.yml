@@ -1,15 +1,18 @@
 ---
-  - name: Install python2
-    hosts: kubes,kube_masters
-    gather_facts: False
-    become: yes
-    tasks:
-      - name: install python 2
-        raw: sudo apt install -y python
-
   - name: Setup server for k8s
     hosts: kubes,kube_masters
     gather_facts: True
     become: yes
     roles:
       - core
+    tags:
+      - k8s
+  
+  - name: Partition data partitions
+    hosts: kubes
+    gather_facts: True
+    become: yes
+    roles:
+      - data_partition
+    tags:
+      - disk
